@@ -1,0 +1,7 @@
+.navbar-nav {
+  width: 100%;
+}
+
+.nav-item:nth-child(4n) {
+  margin-left: auto;
+}

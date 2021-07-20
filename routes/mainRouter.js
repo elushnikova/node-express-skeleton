@@ -4,7 +4,12 @@ const router = express.Router()
 
 router.route('/')
   .get((req, res) => {
-    res.send('Work!')
+    res.render('home')
+  })
+
+router.route('/dashboard')
+  .get((req, res) => {
+    res.render('dashboard')
   })
 
 export default router

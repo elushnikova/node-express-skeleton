@@ -17,4 +17,4 @@ app.use('/', mainRouter)
 app.use('/users', usersRouter)
 
 // прослушивание порта приложения
-app.listen(port, () => console.log(`*Server started at ${port} port`))
+app.listen(port, () => console.log(`*Server started at ${port} port: OK`))

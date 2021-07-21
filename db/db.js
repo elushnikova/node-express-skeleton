@@ -8,9 +8,9 @@ const dbConnection = () => {
       let dbStatus = ''
 
       if (err) {
-        dbStatus = `*Error connecting to DB: ${err}\n****************************\n`
+        dbStatus = `*Error connecting to DB: ${err}\n********************************\n`
       } else {
-        dbStatus = `*DB Connection: OK\n****************************\n`
+        dbStatus = `*DB Connection: OK\n********************************\n`
       }
 
       console.log(dbStatus)

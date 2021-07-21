@@ -1,0 +1,76 @@
+<style>
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #f5f5f5;
+    justify-content: center;
+  }
+
+  .form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+  }
+
+  .form-signin .checkbox {
+    font-weight: 400;
+  }
+
+  .form-signin .form-floating:focus-within {
+    z-index: 2;
+  }
+
+  .form-signin input[type="text"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+
+  }
+
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-radius: 0;
+  }
+
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+</style>
+
+<section class="text-center">
+  <main class="form-signin">
+    <form method="POST" action="/registration">
+      <h1 class="h3 mb-3 fw-normal">Please fill in the fields</h1>
+
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingInputName" placeholder="name@example.com" autofocus>
+        <label for="floatingInputName">Your name</label>
+      </div>
+
+      <div class="form-floating">
+        <input type="email" class="form-control" id="floatingInputPassword" placeholder="name@example.com">
+        <label for="floatingInputPassword">Email address</label>
+      </div>
+
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Password</label>
+      </div>
+
+      <button class="w-100 btn btn-lg btn-success">Register now</button>
+      <a href="/" class="w-100 btn btn-lg btn-outline-secondary mt-1">Back home</a>
+
+    </form>
+
+  </main>
+</section>

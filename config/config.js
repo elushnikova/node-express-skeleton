@@ -4,9 +4,9 @@ import dotenv from 'dotenv'
 import dbConnection from '../db/db.js'
 import helmet from 'helmet'
 import morgan from 'morgan'
-import path from 'path'
-
-const workDir = path.resolve()
+import cookieParser from 'cookie-parser'
+import session from 'express-session'
+import sessionConfig from './sessionConfig.js'
 
 // главная конфигурация приложения
 const config = (app) => {
@@ -17,10 +17,12 @@ const config = (app) => {
   app.use(express.urlencoded({ extended: true }))
   app.use(cors())
   app.use(express.static('public'))
+  app.use(cookieParser())
+  app.use(session(sessionConfig))
 
   // set
   app.set('view engine', 'hbs')
-  app.set('views', path.join(workDir, './views'))
+  app.set('views', 'views')
 
   // run
   dotenv.config()

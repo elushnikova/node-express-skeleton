@@ -61,3 +61,10 @@ body {
   margin: 0.25rem;
   color: #dc3545;
 }
+
+.profile-avatar {
+  font-size: 5rem;
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}

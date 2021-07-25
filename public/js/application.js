@@ -1,7 +1,8 @@
 const form = document.querySelector('#formRegistration')
-const pass = document.querySelector('#floatingPassword')
-const confPass = document.querySelector('#floatingConfirmPassword')
+const pass = document.querySelector('#regPassword')
+const confPass = document.querySelector('#regConfirmPassword')
 const feedback = document.querySelector('#feedback')
+const deleteBtn = document.querySelector('#deleteBtn')
 
 function validate() {
   if (pass.value !== confPass.value) {
@@ -46,6 +47,24 @@ if (form) {
         feedback.textContent = data.message
         feedback.style.display = 'block'
       }
+    }
+  })
+}
+
+if (deleteBtn) {
+  deleteBtn.addEventListener('click', async (event) => {
+
+    const url = event.target.dataset.url
+
+    const response = await fetch(url, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'Application/json' }
+    })
+
+    const data = await response.json()
+
+    if (data.delete) {
+      window.location.href = data.message
     }
   })
 }

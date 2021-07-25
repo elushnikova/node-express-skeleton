@@ -5,13 +5,13 @@ const FileStore = sessionFileSrore(session)
 
 const sessionConfig = {
   store: new FileStore(), // тип хранилища - FileStore, который создаёт нам папку с файлами
-  key: "user_sid", // ключ - название куки
-  secret: "anything here", // слово используемое для шифрования, может быть любым
-  resave: false, // настройка пересохранения куки, при каждом запросе
+  key: "user_uid", // ключ - название куки
+  secret: `${process.env.SECRET_WORD}`, // слово используемое для шифрования, может быть любым
+  resave: true, // настройка пересохранения куки, при каждом запросе
   saveUninitialized: false, // настройка создания сессии, даже без авторизации
   cookie: {
-    expires: 600000, // время "протухания" куки
-    httpOnly: true // по умолчанию true
+    expires: 1000 * 60 * 60 * 12, // время "протухания" куки в миллисекундах
+    httpOnly: true // серверная установка и удаление куки, по умолчанию true
   }
 }
 

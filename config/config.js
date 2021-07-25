@@ -7,6 +7,7 @@ import morgan from 'morgan'
 import cookieParser from 'cookie-parser'
 import session from 'express-session'
 import sessionConfig from './sessionConfig.js'
+import { cookiesCleaner } from '../middleware/auth.js'
 
 // главная конфигурация приложения
 const config = (app) => {
@@ -19,6 +20,7 @@ const config = (app) => {
   app.use(express.static('public'))
   app.use(cookieParser())
   app.use(session(sessionConfig))
+  app.use(cookiesCleaner)
 
   // set
   app.set('view engine', 'hbs')

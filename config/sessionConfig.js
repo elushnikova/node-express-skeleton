@@ -1,7 +1,7 @@
 import session from 'express-session'
-import sessionFileSrore from 'session-file-store'
+import sessionFileStore from 'session-file-store'
 
-const FileStore = sessionFileSrore(session)
+const FileStore = sessionFileStore(session)
 
 const sessionConfig = {
   store: new FileStore(), // тип хранилища - FileStore, который создаёт нам папку с файлами
